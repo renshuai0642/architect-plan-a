@@ -17,7 +17,9 @@ export default {
     {
       file: 'dist/bundle.min.js',
       format: 'iife',
-      name: 'version',
+      name: 'xx',
+        // 如果设置name，引入此包后，将在window上设置全局变量xx
+        // 在系统的任何地方都可以通过xx / window.xx访问到
       plugins: [terser()],
       sourcemap: true, 
     }
