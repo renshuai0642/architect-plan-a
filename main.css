@@ -1,0 +1,23 @@
+:root {
+    box-sizing: border-box;
+}
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.container > .nav {
+    flex: 1;
+}
+
+.container > iframe {
+    flex: 8;
+}
