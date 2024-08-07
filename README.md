@@ -129,3 +129,25 @@ dist/
 *.log
 *.env
 ```
+
+3. push to github
+```
+git add .
+git commit -m "HappyBundler"
+
+... 在github上创建了一个仓库，名为architect-plan-a ...
+
+git remote add origin git@github.com:renshuai0642/architect-plan-a.git
+git branch -M main
+git push -u origin main
+```
+
+4. create and push tag
+```
+git tag -a v1.0.0 -m "rollup to bundle, ts to check type and emit .d.ts, swc to compile from .ts to .js" 
+
+git push --tag    
+// 一次性将所有本地tag推到云上，这里我就建了一个tag，所以用这个命令很ok
+```
+
+5. 登录github 去瞅瞅  
