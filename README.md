@@ -53,6 +53,10 @@ yarn add @rollup/plugin-typescript typescript tslib
 ```
 * 使用摇钱树的前提：使用 ESModule 模块语法  
 * 更新[rollup.config.js](./rollup.config.js)  
+在plugins启用terser，将只生成简化后的bundle.js
+在output设置2个输出文件，  
+一个不启用terser，输出未简化的bundle.js  
+一个启用terser插件，输出简化后的bundle.min.js  
 
 👗启用Prettier  
 代码格式化，更美丽
