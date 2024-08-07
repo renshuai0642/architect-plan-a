@@ -1,0 +1,58 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+      // 编译为ES6语法的js代码
+    "module": "ESNext",
+      // CommonJS AMD UMD System es6 ESNext
+        // es6 生成的js文件，使用了es6的模块语法
+        // ESNext 生成的js文件，使用了最新的ECMAScript模块语法
+    "outDir": "./dist",  // 编译结果输出位置，指定一个文件夹和其路径
+    "rootDir": "./src",  // 编译入口，指定一个文件夹和其路径
+    "strict": true,  // 启用严格的类型检查
+    "esModuleInterop": true,
+      // 用于兼容 CommonJS 和 ESModule语法
+      // 设置为true后，即使模块使用CommonJS导出，也允许通过ESModule语法导入该模块
+        // 例如 import express from 'express'
+      // 设置为false后，导入CommonJS模块，需要使用以下语法
+        // 例如 import * as express from 'express'
+      // 总之，启用有益无害，有助于弥补 CommonJS 模块和 ESModule 模块之间的差异
+      "skipLibCheck": false,
+      // 在编译过程中，跳过声明文件 .d.ts 文件
+        // 关闭它，可以提高编译速度
+        // 如果声明文件中确实存在错误，将无法检测到
+      // "types": ["node", "estree"],
+        // TypeScript要使用 哪些模块的类型
+          // 不指定，则默认使用 node_modules/@types 中可用的类型定义
+          // 指定，TypeScript仅包含指定的类型定义，忽略其他可用的类型定义
+            // 为什么要开放这个配置？因为在大型项目中，减少TypeScript需要处理的类型数量
+      "experimentalDecorators": true,
+        // 启用实验性质的装饰器特性
+      "emitDecoratorMetadata": true,
+        // 启用实验性质的装饰器特性
+      // "noEmit": true,
+        // 不编译生成ts文件
+          // 我关闭了tsc编译功能，只用ts进行类型检查
+            // 又因为 我开启了 emitDeclarationOnly 导出.d.ts声明文件，要求我关闭noEmit
+      "allowImportingTsExtensions": true,
+        // 允许导入的时候使用.ts结尾
+          // 开启这一项依赖于 关闭生成ts文件 或 仅生成ts的声明文件
+      "declaration": true,
+        // 通过ts导出 .d.ts文件
+      "declarationDir": "./dist/types", 
+        // 声明文件导出位置
+      "emitDeclarationOnly": true,
+        // 仅导出 .d.ts 声明文件，不使用tsc编译
+          // 因为我使用rollup开启了使用swc编译
+      "forceConsistentCasingInFileNames": true,
+        // 禁止对同一文件进行大小写不一致的引入
+  },
+  "include": [
+    "src/**/*",
+    "main.ts",
+  ],
+    // 编译文件时应该包含的文件和目录
+      // "src/**/*" src文件下所有目录和文件
+      // "main.ts" 编译时附加的文件
+  "exclude": ["node_modules"],
+    // 编译时，要排除的文件
+}

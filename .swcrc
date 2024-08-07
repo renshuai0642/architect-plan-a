@@ -1,0 +1,17 @@
+{
+    "jsc": {
+      "parser": {
+        "syntax": "typescript",
+        "tsx": false // Set to true if you're using TSX
+      },
+      "transform": {
+        "decoratorMetadata": true, // Add if you need decorator metadata 装饰器元数据
+        "legacyDecorator": true // Add if you need legacy decorators
+      },
+      "target": "es5"
+    },
+    "module": {
+      "type": "es6"
+    }
+}
+  
